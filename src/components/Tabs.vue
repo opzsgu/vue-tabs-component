@@ -102,13 +102,9 @@
                     return;
                 }
 
-                if (selectedTab.isDisabled && selectedTab.callDisabledClick === false) {
-                    event.preventDefault();
-                    return;
-                }
-
-                if (selectedTab.isDisabled && selectedTab.callDisabledClick) {
+                if (selectedTab.isDisabled) {
                     this.$emit('disabledClick', { tab: selectedTab });
+                    event.preventDefault();
                     return;
                 }
 

@@ -17,7 +17,6 @@
             prefix: { default: '' },
             suffix: { default: '' },
             isDisabled:{ default: false },
-            callDisabledClick:{ default: false },
         },
 
         data: () => ({

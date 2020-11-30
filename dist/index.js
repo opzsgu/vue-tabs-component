@@ -342,8 +342,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             name: { required: true },
             prefix: { default: '' },
             suffix: { default: '' },
-            isDisabled: { default: false },
-            callDisabledClick: { default: false }
+            isDisabled: { default: false }
         },
 
         data: function data() {
@@ -529,13 +528,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     return;
                 }
 
-                if (selectedTab.isDisabled && selectedTab.callDisabledClick === false) {
-                    event.preventDefault();
-                    return;
-                }
-
-                if (selectedTab.isDisabled && selectedTab.callDisabledClick) {
+                if (selectedTab.isDisabled) {
                     this.$emit('disabledClick', { tab: selectedTab });
+                    event.preventDefault();
                     return;
                 }
 
